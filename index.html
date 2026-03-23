@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Italian Discoveries 2026</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ░░ HERO BANNER ░░ -->
+  <header class="hero" id="hero">
+    <div class="hero-slides">
+      <!--
+        TO SWAP IMAGES:
+        Replace the `style="background-image: url('...')"` value on each .slide div
+        with the path to your uploaded image file. You can add or remove .slide divs
+        as needed — the slideshow will adjust automatically.
+      -->
+      <div class="slide active" style="background-image: url('photos/photo1.jpg')"></div>
+      <div class="slide"        style="background-image: url('photos/photo2.jpg')"></div>
+      <div class="slide"        style="background-image: url('photos/photo3.jpg')"></div>
+      <div class="slide"        style="background-image: url('photos/photo4.jpg')"></div>
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Maymester Adventures</p>
+      <h1 class="hero-title">Italian Discoveries<br><em>il Rinascimento</em></h1>
+      <p class="hero-subtitle">dispatches from a student wandering Italy</p>
+      <div class="hero-dots" id="heroDots"/</div>
+    </div>
+
+    <button class="hero-arrow prev" id="prevBtn" aria-label="Previous photo">&#8592;</button>
+    <button class="hero-arrow next" id="nextBtn" aria-label="Next photo">&#8594;</button>
+
+    <div class="hero-scroll-hint">scroll to read ↓</div>
+  </header>
+
+
+  <!-- ░░ MAIN CONTENT ░░ -->
+  <main class="content-wrap">
+
+    <!-- ── ABOUT ── -->
+    <section id="about" class="about">
+      <div class="section-label">About</div>
+      <div class="about-inner">
+        <div class="about-portrait placeholder-img" style="background-image: url('photos/portrait.jpg')"></div>
+        <div class="about-text">
+          <h2>Hi, My name is Colin Adreani</h2>
+          <p>I am a student at the John Martinson Honors College at Purdue studying Aerospace Engineering, and, this summer, I will be going on a study away trip called “Italian Discoveries.” Though my continental Italian heritage is distant (A few generations back) I established a link to it through culinary exploration and actual exploration through the tuscan countryside.</p>
+          <p>I see Italy as a very important part of our collective history; it is the birthplace of the Roman Empire, the cradle renaissance, and the center of the catholic world. Its cultural exports are seen around the world in fashion, cuisine, and music. I believe that this is not coincidental, but rather it is the result of a centuries long history of celebrating and supporting talent when it arises. I hope to learn more about how this attitude developed through history and especially during the turning point that was the renaissance.</p>
+          <p>If you want to contact me, you can reach me at <a href="mailto:italiandiscoveries2026@gmail.com">you@email.com</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!--
+
+    <!-- ── LATEST POST ── 
+    <section id="latest" class="latest-post">
+      <div class="section-label">Most Recent</div>
+
+      <article class="post post--featured">
+        <div class="post-meta">
+          <span class="post-date">March 14, 2026</span>
+          <span class="post-location">📍 Cinque Terre</span>
+        </div>
+        <h2 class="post-title">The Trails That Nearly Broke Me (And Why I'd Do It Again)</h2>
+        <div class="post-image-wrap">
+          <!-- Replace with your own image 
+          <div class="post-image placeholder-img" style="background-image: url('photos/post-featured.jpg')"></div>
+        </div>
+        <div class="post-body">
+          <p>There's a particular kind of exhaustion that comes from hiking five villages stitched together by cliffside paths above the Ligurian Sea — your calves burning, your water bottle empty, the sun doing absolutely nothing helpful. I found that exhaustion on a Tuesday.</p>
+          <p>I'd left Riomaggiore at 7 a.m. with my roommate Sofia and an embarrassingly optimistic attitude. By the time we collapsed onto a bench in Monterosso al Mare six hours later, we'd eaten two focaccias, shared a lemon granita, and said very little for the final hour — the comfortable silence of people who've survived something together.</p>
+          <p>What nobody tells you about Cinque Terre is that the villages themselves are almost secondary to the moments in between: the particular angle of light on terraced vineyards, the surprise of a lemon tree hanging over a stone wall, a cat asleep on a doorstep as though posing for a postcard it has no interest in.</p>
+          <p>I'll be back. Probably with better shoes.</p>
+        </div>
+        <a href="#" class="post-read-more">Read full post →</a>
+      </article>
+    </section>
+
+    <!-- ── POST ARCHIVE ── 
+    <section id="archive" class="archive">
+      <div class="section-label">All Posts</div>
+
+      <div class="archive-grid">
+
+        <article class="post post--card">
+          <div class="post-card-img placeholder-img" style="background-image: url('photos/post2.jpg')"></div>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="post-date">March 5, 2026</span>
+              <span class="post-location">📍 Florence</span>
+            </div>
+            <h3 class="post-title">Uffizi, Overwhelmed, Outstanding</h3>
+            <p class="post-excerpt">Four hours in the Uffizi and I still didn't see everything. Here's what actually stopped me in my tracks — and what I'll skip next time.</p>
+            <a href="#" class="post-read-more">Read →</a>
+          </div>
+        </article>
+
+        <article class="post post--card">
+          <div class="post-card-img placeholder-img" style="background-image: url('photos/post3.jpg')"></div>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="post-date">February 22, 2026</span>
+              <span class="post-location">📍 Rome</span>
+            </div>
+            <h3 class="post-title">Living in Rome on a Student Budget</h3>
+            <p class="post-excerpt">Spoiler: it involves a lot of supplì, exactly one splurge dinner, and knowing which side streets the tourists haven't found yet.</p>
+            <a href="#" class="post-read-more">Read →</a>
+          </div>
+        </article>
+
+        <article class="post post--card">
+          <div class="post-card-img placeholder-img" style="background-image: url('photos/post4.jpg')"></div>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="post-date">February 10, 2026</span>
+              <span class="post-location">📍 Bologna</span>
+            </div>
+            <h3 class="post-title">The City That Feeds You</h3>
+            <p class="post-excerpt">Bologna is not subtle about what it loves. I ate tagliatelle al ragù three days in a row and I regret nothing.</p>
+            <a href="#" class="post-read-more">Read →</a>
+          </div>
+        </article>
+
+        <article class="post post--card">
+          <div class="post-card-img placeholder-img" style="background-image: url('photos/post5.jpg')"></div>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="post-date">January 29, 2026</span>
+              <span class="post-location">📍 Venice</span>
+            </div>
+            <h3 class="post-title">Venice in January: Actually Perfect</h3>
+            <p class="post-excerpt">No cruise ships. Mist on the canals. Acqua alta up to my ankles. Somehow, completely magical.</p>
+            <a href="#" class="post-read-more">Read →</a>
+          </div>
+        </article>
+
+        <article class="post post--card">
+          <div class="post-card-img placeholder-img" style="background-image: url('photos/post6.jpg')"></div>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="post-date">January 15, 2026</span>
+              <span class="post-location">📍 Milan</span>
+            </div>
+            <h3 class="post-title">Arrival: First Week in Milan</h3>
+            <p class="post-excerpt">Getting lost immediately, accidentally ordering the wrong thing (it was delicious), and realizing I have absolutely no idea what I'm doing. Perfect start.</p>
+            <a href="#" class="post-read-more">Read →</a>
+          </div>
+        </article>
+
+      </div><!-- /.archive-grid
+    </section>
+    -->
+
+  </main>
+
+  <footer class="site-footer">
+    <p>La Mia Italia &nbsp;·&nbsp; <span id="footerYear"></span> &nbsp;·&nbsp; written somewhere in Italy</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
