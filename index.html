@@ -13,12 +13,6 @@
   <!-- ░░ HERO BANNER ░░ -->
   <header class="hero" id="hero">
     <div class="hero-slides">
-      <!--
-        TO SWAP IMAGES:
-        Replace the `style="background-image: url('...')"` value on each .slide div
-        with the path to your uploaded image file. You can add or remove .slide divs
-        as needed — the slideshow will adjust automatically.
-      -->
       <div class="slide active" style="background-image: url('photos/photo1.jpg')"></div>
       <div class="slide"        style="background-image: url('photos/photo2.jpg')"></div>
       <div class="slide"        style="background-image: url('photos/photo3.jpg')"></div>
@@ -40,129 +34,104 @@
     <div class="hero-scroll-hint">scroll to read ↓</div>
   </header>
 
+  <!-- ░░ TAB NAV ░░ -->
+  <nav class="tab-nav" id="tabNav" role="tablist">
+    <div class="tab-nav-inner">
+      <button class="tab-btn active" data-tab="about"   role="tab" aria-selected="true">About</button>
+      <button class="tab-btn"        data-tab="posts"   role="tab" aria-selected="false">Posts</button>
+      <button class="tab-btn"        data-tab="gallery" role="tab" aria-selected="false">Gallery</button>
+    </div>
+    <div class="tab-ink" id="tabInk"></div>
+  </nav>
 
   <!-- ░░ MAIN CONTENT ░░ -->
   <main class="content-wrap">
 
     <!-- ── ABOUT ── -->
-    <section id="about" class="about">
+    <section id="about" class="tab-panel about" data-panel="about">
       <div class="section-label">About</div>
       <div class="about-inner">
         <div class="about-portrait placeholder-img" style="background-image: url(Headshot_NJ.JPG)"></div>
         <div class="about-text">
           <h2>Hi, My name is Colin Adreani</h2>
-          <p>I am a student at the John Martinson Honors College at Purdue studying Aerospace Engineering, and, this summer, I will be going on a study away trip called “Italian Discoveries.” Though my continental Italian heritage is distant (A few generations back) I established a link to it through culinary exploration and actual exploration through the tuscan countryside.</p>
-          <p>I see Italy as a very important part of our collective history; it is the birthplace of the Roman Empire, the cradle renaissance, and the center of the catholic world. Its cultural exports are seen around the world in fashion, cuisine, and music. I believe that this is not coincidental, but rather it is the result of a centuries long history of celebrating and supporting talent when it arises. I hope to learn more about how this attitude developed through history and especially during the turning point that was the renaissance.</p>
+          <p>I am a student at the John Martinson Honors College at Purdue studying Aerospace Engineering, and, this summer, I will be going on a study away trip called "Italian Discoveries." Though my continental Italian heritage is distant (A few generations back) I established a link to it through culinary exploration and actual exploration through the Tuscan countryside.</p>
+          <p>I see Italy as a very important part of Western history; it is the birthplace of the Roman Empire, the cradle renaissance, and the center of the Catholic world. Its cultural exports are seen around the world in fashion, cuisine, and music. The cities we are visiting, Venice, Milan, and Florence, exemplify this with their historical importance given the city-states that were based around them and their role in the renaissance, especially given that Leonardo Da Vinci visited all three. The art and architecture housed in these cities serve as an important historical record of the time and serve as inspiration all over the world. Italian cuisine is of course one of the main things I think about. Cooking is one of my main hobbies, so the flavors of the country have always had a special place in my heart. Much of Italian dining culture is very different from what we have in the states and is often replicated and imitated elsewhere.</p>
+          <p>I hope to deepen my knowledge about the cultures that still survive here and the histories and stories that led the world to its current moment. Because of the expansive influence that Italy and the Renaissance had on the course of Western culture, thought, and technology, I want to know the social and philosophical factors that led to that storm of innovation that the Renaissance is famous for. Given that the Renaissance was the "rebirth" of classical thought, I want to know why that period of history interested them so much and how those influences came through in their worldviews.</p>
           <p>If you want to contact me, you can reach me at <a href="mailto:italiandiscoveries2026@gmail.com">italiandiscoveries2026@gmail.com</a>.</p>
         </div>
       </div>
     </section>
 
-    <!--
+    <!-- ── POSTS ── -->
+    <section id="posts" class="tab-panel" data-panel="posts" hidden>
 
-    <!-- ── LATEST POST ── 
-    <section id="latest" class="latest-post">
-      <div class="section-label">Most Recent</div>
+      <!-- Archive -->
+      <div class="archive">
+        <div class="section-label">All Posts</div>
+        <div class="archive-grid">
 
-      <article class="post post--featured">
-        <div class="post-meta">
-          <span class="post-date">March 14, 2026</span>
-          <span class="post-location">📍 Cinque Terre</span>
+          <article class="post post--card">
+            <div class="post-card-img placeholder-img" style="background-image: url('OrnithopterFull.png')"></div>
+            <div class="post-card-body">
+              <div class="post-meta">
+                <span class="post-date">May 17, 2026</span>
+                <span class="post-location">Leonardo Da Vinci Museum, Venice</span>
+              </div>
+              <h3 class="post-title">A look into Leonardo's Ornithopter</h3>
+
+              <div class="post-expand" hidden>
+                <p>“Starting with Galileo and the seventeenth century, extension was substituted for localization” (Foucault, 1986). In our postmodern society, nothing is more important than traveling fast, which means to do so without hindrances like the uneven ground given by mountains and hills or waves and torrential winds to knock the boats we sail. We yearn to extend our reach to all reaches of the earth, and to avoid all these distractions from our goal of ultimate expansion, humans turned to the sky. We have been obsessed with flight since the time of the ancients, with Daedalus and Icarus being prime examples of humanity's obsession with reaching for the heavens. In the story, bird feathers are plucked and used to fashion wings from wax, showing how the first ways humans ever conceived of flight was through the imitation of nature.</p>
+                <p>Leonardo’s development of the ornithopter started likely with an intense study into the flight mechanics of birds. He has a long history of deriving mechanics using human bodies as inspiration (Museo Galileo), and in 1505-1506, he published a full codex all about the flight of birds (Jakab, 2013). While the original drawings for the ornithopter came before, in his Manuscript B from 1487-90 (Museo Galileo), the knowledge he wrote in the Codex on the Flight of Birds was clearly present in this earlier stage in life. Da Vinci spent a lot of time spread out over years conceptualizing the different ways he could make a man fly, with initial designs of the winged flight going back to 1478 (Museo Galileo). These were heavily based on the wings of a bird and serve as some of the first and most famous examples of biomimicry. This likely draws on the Renaissance belief that efficiency and perfection comes from symmetry and mathematics. Leonardo was one of the people to notice nature’s tendency to include these factors, especially in his studies in the human body where he hypothesised “perfect” ratios that form the human body which are reflected across our Sagittal plane. This all culminates in the ornithopter, a flapping flying machine inspired by bird flight which would theoretically allow for humans to take to the sky. In the centuries after Da Vinci’s death, people would try to bring it into reality, and many succeeded in making them fly without humans, instead using springs, rubber bands, and even explosive power (Ornithopter Society). While human powered ornithopter flight remains highly impractical and inefficient, the advances Leonardo Da Vinci made in aerodynamics and flight paved the way for the Wright brothers and eventually the postmodern, hypermobile society we live in today.</p>
+                <p>Da Vinci’s ornithopter was special in that it was a vehicle. Many earlier designs and mythical stories conceptualized a human’s winged flight as a suit or wings affixed to one's arms, and other winged flying machines lacked humans altogether, abandoning the dream of taking to the sky. To generate lift, Da Vinci’s ornithopter incorporated wings inspired by birds with “an impressive wingspan exceeding 33 feet, constructed with a frame made of pine and covered in raw silk—a combination that aimed for a delicate balance between lightness and sturdiness. The pilot’s position was prone, lying face down on a board at the centre of the invention.” (Civil Aviation Academy, 2024). The human operator simply needed to operate a series of levers and pulleys that would cause the wings to flap in the same manner a bird does. The operator could use their feet to control the angle of the wings, while using their arms to generate a flapping motion. With this, a well trained and incredibly strong man should have been able to fly. Its genius comes in its simplicity. Very few mechanical linkages still give its operator total control over the position and movement of the wings.</p>
+                <p>The Ornithopter was not alone in Da Vinci’s designs, as much of his body of work was dedicated to methods of movement and war. These other designs for flight included the Ariel Screw, which generated lift like a fan does by pushing air downwards continuously. This type of rotary design was, like many of the things Da Vinci did, centuries ahead of its time, as the same kind of motion is used today for drones and helicopters. This came during his time as a military consultant for Milan (Museo Galileo), and it was likely meant to be paired with various explosives or artillery for aerial bombardment. It is not hard to imagine how Leonardo could have used the Ornithopter for war as well, to deploy troops behind enemy walls was an unheard of and incredibly powerful tactic at that time.</p>
+                <div class="post-card-img placeholder-img" style="background-image: url('OrnithopterWing1.png')"></div>
+                <div class="post-card-img placeholder-img" style="background-image: url('OrnithopterWing2.png')"></div>
+                <div class="post-card-img placeholder-img" style="background-image: url('OrnithopterWing3.png')"></div>
+
+                <!-- NESTED WORKS CITED -->
+                <div class="works-cited-wrap">
+                  <button class="works-cited-toggle" aria-expanded="false">Works Cited ↓</button>
+                  <div class="works-cited" hidden>
+                    <ol>
+                      <li>"Codex Atlanticus." <em>Ambrosiana</em>. https://www.ambrosiana.it/en/discover/masterpieces/codex-atlanticus/</li>
+                      <li>Da Vinci, Leonardo. <em>Manuscript B</em>. Self, Milan, 1490.</li>
+                      <li>Goodheart, Benjamin. "Tracing the History of the Ornithopter: Past, Present, and Future." <em>Journal of Aviation/Aerospace Education & Research</em>. https://commons.erau.edu/cgi/viewcontent.cgi?article=1344&context=jaaer</li>
+                      <li>Jakab, Peter. "An Extraordinary Journey: The History of Leonardo da Vinci’s Codex on the Flight of Birds." <em>Smithsonian National Air and Space Museum</em>. https://airandspace.si.edu/stories/editorial/extraordinary-journey-history-leonardo-da-vincis-codex-flight-birds</li>
+                      <li>"Leonardo da Vinci’s Dream – The Ornithopter and the Quest for Flight." <em>Civil Aviation Museum, Australia</em>. https://www.caaa.com.au/leonardo-da-vincis-dream-the-ornithopter-and-the-quest-for-flight/</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+              <button class="post-read-more post-toggle" aria-expanded="false">Read →</button>
+              
+            </div>
+          </article>
         </div>
-        <h2 class="post-title">The Trails That Nearly Broke Me (And Why I'd Do It Again)</h2>
-        <div class="post-image-wrap">
-          <!-- Replace with your own image 
-          <div class="post-image placeholder-img" style="background-image: url('photos/post-featured.jpg')"></div>
-        </div>
-        <div class="post-body">
-          <p>There's a particular kind of exhaustion that comes from hiking five villages stitched together by cliffside paths above the Ligurian Sea — your calves burning, your water bottle empty, the sun doing absolutely nothing helpful. I found that exhaustion on a Tuesday.</p>
-          <p>I'd left Riomaggiore at 7 a.m. with my roommate Sofia and an embarrassingly optimistic attitude. By the time we collapsed onto a bench in Monterosso al Mare six hours later, we'd eaten two focaccias, shared a lemon granita, and said very little for the final hour — the comfortable silence of people who've survived something together.</p>
-          <p>What nobody tells you about Cinque Terre is that the villages themselves are almost secondary to the moments in between: the particular angle of light on terraced vineyards, the surprise of a lemon tree hanging over a stone wall, a cat asleep on a doorstep as though posing for a postcard it has no interest in.</p>
-          <p>I'll be back. Probably with better shoes.</p>
-        </div>
-        <a href="#" class="post-read-more">Read full post →</a>
-      </article>
+      </div>
+
     </section>
 
-    <!-- ── POST ARCHIVE ── 
-    <section id="archive" class="archive">
-      <div class="section-label">All Posts</div>
-
-      <div class="archive-grid">
-
-        <article class="post post--card">
-          <div class="post-card-img placeholder-img" style="background-image: url('photos/post2.jpg')"></div>
-          <div class="post-card-body">
-            <div class="post-meta">
-              <span class="post-date">March 5, 2026</span>
-              <span class="post-location">📍 Florence</span>
-            </div>
-            <h3 class="post-title">Uffizi, Overwhelmed, Outstanding</h3>
-            <p class="post-excerpt">Four hours in the Uffizi and I still didn't see everything. Here's what actually stopped me in my tracks — and what I'll skip next time.</p>
-            <a href="#" class="post-read-more">Read →</a>
-          </div>
-        </article>
-
-        <article class="post post--card">
-          <div class="post-card-img placeholder-img" style="background-image: url('photos/post3.jpg')"></div>
-          <div class="post-card-body">
-            <div class="post-meta">
-              <span class="post-date">February 22, 2026</span>
-              <span class="post-location">📍 Rome</span>
-            </div>
-            <h3 class="post-title">Living in Rome on a Student Budget</h3>
-            <p class="post-excerpt">Spoiler: it involves a lot of supplì, exactly one splurge dinner, and knowing which side streets the tourists haven't found yet.</p>
-            <a href="#" class="post-read-more">Read →</a>
-          </div>
-        </article>
-
-        <article class="post post--card">
-          <div class="post-card-img placeholder-img" style="background-image: url('photos/post4.jpg')"></div>
-          <div class="post-card-body">
-            <div class="post-meta">
-              <span class="post-date">February 10, 2026</span>
-              <span class="post-location">📍 Bologna</span>
-            </div>
-            <h3 class="post-title">The City That Feeds You</h3>
-            <p class="post-excerpt">Bologna is not subtle about what it loves. I ate tagliatelle al ragù three days in a row and I regret nothing.</p>
-            <a href="#" class="post-read-more">Read →</a>
-          </div>
-        </article>
-
-        <article class="post post--card">
-          <div class="post-card-img placeholder-img" style="background-image: url('photos/post5.jpg')"></div>
-          <div class="post-card-body">
-            <div class="post-meta">
-              <span class="post-date">January 29, 2026</span>
-              <span class="post-location">📍 Venice</span>
-            </div>
-            <h3 class="post-title">Venice in January: Actually Perfect</h3>
-            <p class="post-excerpt">No cruise ships. Mist on the canals. Acqua alta up to my ankles. Somehow, completely magical.</p>
-            <a href="#" class="post-read-more">Read →</a>
-          </div>
-        </article>
-
-        <article class="post post--card">
-          <div class="post-card-img placeholder-img" style="background-image: url('photos/post6.jpg')"></div>
-          <div class="post-card-body">
-            <div class="post-meta">
-              <span class="post-date">January 15, 2026</span>
-              <span class="post-location">📍 Milan</span>
-            </div>
-            <h3 class="post-title">Arrival: First Week in Milan</h3>
-            <p class="post-excerpt">Getting lost immediately, accidentally ordering the wrong thing (it was delicious), and realizing I have absolutely no idea what I'm doing. Perfect start.</p>
-            <a href="#" class="post-read-more">Read →</a>
-          </div>
-        </article>
-
-      </div><!-- /.archive-grid
+    <!-- ── GALLERY ── -->
+    <section id="gallery" class="tab-panel" data-panel="gallery" hidden>
+      <div class="section-label">Gallery</div>
+      <div class="gallery-grid">
+        <div class="gallery-item placeholder-img" style="background-image: url('photos/photo1.jpg')"></div>
+        <div class="gallery-item placeholder-img" style="background-image: url('photos/photo2.jpg')"></div>
+        <div class="gallery-item placeholder-img" style="background-image: url('photos/photo3.jpg')"></div>
+        <div class="gallery-item placeholder-img" style="background-image: url('photos/photo4.jpg')"></div>
+        <div class="gallery-item placeholder-img" style="background-image: url('photos/post-featured.jpg')"></div>
+        <div class="gallery-item placeholder-img" style="background-image: url('photos/post2.jpg')"></div>
+        <div class="gallery-item placeholder-img" style="background-image: url('photos/post3.jpg')"></div>
+        <div class="gallery-item placeholder-img" style="background-image: url('photos/post4.jpg')"></div>
+        <div class="gallery-item placeholder-img" style="background-image: url('photos/post5.jpg')"></div>
+        <div class="gallery-item placeholder-img" style="background-image: url('photos/post6.jpg')"></div>
+      </div>
     </section>
-    -->
 
   </main>
 
   <footer class="site-footer">
-    <p>il Rinascimento &nbsp;·&nbsp; <span id="footerYear"></span> &nbsp;·&nbsp; written somewhere in Italy</p>
+    <p>il Rinascimento &nbsp;·&nbsp; <span id="footerYear"></span> &nbsp;·&nbsp; Colin Adreani</p>
   </footer>
 
   <script src="script.js"></script>

@@ -47,47 +47,94 @@
     nextBtn.style.display = 'none';
   }
 
-  // ── Hero collapse on scroll ─────────────────
-  const hero    = document.getElementById('hero');
-  const siteNav = document.getElementById('siteNav');
+  // ── Tab Navigation ──────────────────────────
+  const tabBtns  = Array.from(document.querySelectorAll('.tab-btn'));
+  const panels   = Array.from(document.querySelectorAll('.tab-panel'));
+  const inkBar   = document.getElementById('tabInk');
 
-  // Threshold: collapse after scrolling 30% of hero height
-  const COLLAPSE_THRESHOLD = () => window.innerHeight * 0.01;
+  function moveInk(btn) {
+    const navRect = btn.closest('.tab-nav').getBoundingClientRect();
+    const btnRect = btn.getBoundingClientRect();
+    inkBar.style.left  = (btnRect.left - navRect.left) + 'px';
+    inkBar.style.width = btnRect.width + 'px';
+  }
 
-  function onScroll() {
-    const scrolled = window.scrollY;
-    const threshold = COLLAPSE_THRESHOLD();
+  function activateTab(tabId) {
+    tabBtns.forEach(b => {
+      const active = b.dataset.tab === tabId;
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-selected', active);
+    });
 
-    // Parallax: move the slides faster than the scroll (1.4× speed)
-    const PARALLAX_SPEED = 1.4;
-    hero.style.transform = `translateY(-${scrolled * PARALLAX_SPEED}px)`;
+    panels.forEach(p => {
+      if (p.dataset.panel === tabId) {
+        p.removeAttribute('hidden');
+      } else {
+        p.setAttribute('hidden', '');
+      }
+    });
 
-    if (scrolled > threshold) {
-      hero.classList.add('collapsed');
-      siteNav.classList.add('visible');
-    } else {
-      hero.classList.remove('collapsed');
-      siteNav.classList.remove('visible');
-    }
-}
+    const activeBtn = tabBtns.find(b => b.dataset.tab === tabId);
+    if (activeBtn) moveInk(activeBtn);
 
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll(); // run once on load
+    // Scroll content back to top on tab switch
+    window.scrollTo({ top: document.querySelector('.tab-nav').offsetTop, behavior: 'smooth' });
+  }
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => activateTab(btn.dataset.tab));
+  });
+
+  // ── Expandable post bodies ──────────────────
+  document.querySelectorAll('.post-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expand = btn.previousElementSibling; // the .post-expand div
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+      if (isOpen) {
+        expand.setAttribute('hidden', '');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = 'Read →';
+      } else {
+        expand.removeAttribute('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.textContent = 'Close ↑';
+      }
+    });
+  });
+
+  // ── Works cited toggles ─────────────────────
+  document.querySelectorAll('.works-cited-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const section = btn.nextElementSibling; // the .works-cited div
+      const isOpen  = btn.getAttribute('aria-expanded') === 'true';
+
+      if (isOpen) {
+        section.setAttribute('hidden', '');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = 'Works Cited ↓';
+      } else {
+        section.removeAttribute('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.textContent = 'Works Cited ↑';
+      }
+    });
+  });
+
+  // Set initial ink position after layout
+  requestAnimationFrame(() => {
+    const initial = tabBtns.find(b => b.classList.contains('active'));
+    if (initial) moveInk(initial);
+  });
+
+  // Re-position ink on resize
+  window.addEventListener('resize', () => {
+    const active = tabBtns.find(b => b.classList.contains('active'));
+    if (active) moveInk(active);
+  });
 
   // ── Footer year ────────────────────────────
   const yearEl = document.getElementById('footerYear');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  // ── Smooth-scroll nav links ─────────────────
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', e => {
-      const target = document.querySelector(link.getAttribute('href'));
-      if (!target) return;
-      e.preventDefault();
-      // Account for sticky nav height
-      const offset = target.getBoundingClientRect().top + window.scrollY - 64;
-      window.scrollTo({ top: offset, behavior: 'smooth' });
-    });
-  });
 
 })();
